@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv = "refresh" content = "0; url = http://vrplaypark.com/cs/" />
+	<meta charset="UTF-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<link rel="icon" href="../theme/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../theme/images/favicon.ico" type="image/x-icon">
+	<meta http-equiv="Expires" content="0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<script type="text/javascript" src="./frontend/scripts/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="./frontend/scripts/lib/handlebars.min-latest.js"></script>
+	<script type="text/javascript" src="./frontend/scripts/script.js"></script>
+
+	<!-- NEW -->
+	<script type="text/javascript" src="./frontend/scripts/lib/jquery_ui/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="./frontend/scripts/lib/jquery_ui/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript" src="./frontend/scripts/lib/jquery_ui/jquery.ui.widget.js"></script>
+	
+	<!-- NEW -->
+	<!-- <script type="text/javascript" src="./frontend/scripts/lib/jquery_ui/jquery.ui.datepicker-cs.js"></script> -->
+	<!-- <script type="text/javascript" src="./frontend/scripts/lib/jquery_ui/jquery.ui.datepicker-ru.js"></script> -->
+	
+	<!-- NEW -->
+
+	<link rel="stylesheet" type="text/css" href="./frontend/css/jquery_ui/jquery.ui.all.css">
+
+	<link rel="stylesheet" type="text/css" href="./frontend/css/default.css?v=3">
+	<link rel="stylesheet" type="text/css" href="./frontend/css/main.css?v=58">
+	
+	<title>TorchVR Rezervace</title>
+
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MPBN7GZ');</script>
+
+	<!-- End Google Tag Manager -->
+
+		<!-- Global site tag (gtag.js) - Google AdWords: 830935336 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-830935336"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'AW-830935336');
+	</script>
+	<script async src="https://www.jscache.com/wejs?wtype=cdsratingsonlywide&amp;uniq=725&amp;locationId=10681923&amp;lang=en_AU&amp;border=true&amp;shadow=true&amp;backgroundColor=gray&amp;display_version=2"></script>
+
+		
+</head>
+<body>
+
+	<!-- Load Facebook SDK for JavaScript -->
+	  <div id="fb-root"></div>
+	  <script>(function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));</script>
+
+	  <!-- Your customer chat code -->
+	  <div class="fb-customerchat"
+	    attribution=setup_tool
+	    page_id="1621224908098159"
+		logged_in_greeting="Dobrý den. Jestli máte problem s rezervaci neváhejte nás kontaktovat"
+	    logged_out_greeting="Dobrý den. Jestli máte problem s rezervaci neváhejte nás kontaktovat"
+	    greeting_dialog_delay="150"
+	    minimized="true">
+	  </div>
+
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPBN7GZ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="content" style="margin-top: 10px;">
+		<div id="booking-container" class="section">
+			<!-- Main content -->
+		</div>
+	</div>
+	
+	<!-- HANDLEBARS TEMPLATE FIRST STEP -->
+	<script id="firstSelectTemplate" type="text/x-handlebars-template">
+		<div id="game-selection-step">
+			<div>
+				<div class="title-page">#1 Vyber hru</div>
+				
+
+			</div>
+			<div class="carousel mission-carousel">
+				<div class="carousel-offset mission-carousel-offset">
+					{{#services}}
+						<div id={{name_service}} class="carousel-item mission-container" style="">
+							<div class="mission-image-container">
+								<div class="price title lower">{{name_service_title}} <p><a href={{url}}>více informací zde</a></p></div>
+								<div class="mission-image" style="background-image: url({{url_preview}});"></div> 
+								<div class="price money higher">{{price}} Kč / hráče</div>
+								<div class="price hour higher">{{duration}} minut</div>
+								<!--places-->
+								<select class="players price lower">
+									{{#each players}}
+										<option value={{this}}>{{this}} hráče/ů</option>
+									{{/each}}	
+								</select>
+								<!--language-->
+								<select id="langs" class="langs price lower">
+									<option value="none" disabled selected hidden>Vyberte jazyk</option>
+									{{#each langs}}
+										<option value={{this}}>{{this}}</option>
+									{{/each}}
+								</select>
+								<!-- ///NEW -->
+
+								
+								<input readonly class="datepicker datepick price" style="background:url(frontend/media/bg-arrows.png) no-repeat right center; border:none;" type="text" size="30" placeholder="Change date..."/>
+							</div>
+						</div>
+					{{/services}}
+				</div>
+				<img src="./frontend/media/icons/arrow-left.svg" class="game scroll-arrow scroll-arrow-left"> 
+				<img src="./frontend/media/icons/arrow-right.svg" class="game scroll-arrow scroll-arrow-right">
+			</div>
+			
+			<div class="waiting">
+			</div>
+
+			<div class="handlebar">
+				<!-- HANDLEBARS TEMPLATE DAYS HERE -->
+			</div>
+			<button class="primary medium book-button" style="">Vybrat</button>
+		</div>
+	</script>
+
+	<!-- HANDLEBARS TEMPLATE DAYS -->
+	<script id="dayTemplate" type="text/x-handlebars-template">
+		<div class="carousel day-carousel">
+			<div class="carousel-offset day-carousel-offset">
+				{{#games}}
+					<div class="carousel-item day-container" style="">
+						<div class="day-title">{{date}}</div>
+							{{#hours}}
+								<div class="time-slot {{type}}">{{hour}}</div>
+							{{/hours}}
+					</div>
+				{{/games}}
+			</div>
+			<img src="./frontend/media/icons/arrow-left.svg" class="day scroll-arrow scroll-arrow-left"> 
+			<!--<img src="./frontend/media/icons/arrow-right.svg" class="day scroll-arrow scroll-arrow-right">-->
+		</div>
+	</script>
+
+	<!-- HANDLEBARS TEMPLATE SECOND STEP -->
+	<script id="secondSelectTemplate" type="text/x-handlebars-template">
+		<div id="reserve-selection-step">
+			<div class="title-section">
+				<button class="primary medium back-button enabled" style=""><<</button>
+				<div class="title-page"> #2 Udělej rezervaci</div>
+			</div>
+			<div class="title-in">Vybral(a) jsi:</div>
+			<div class="game-description">
+				<div id="game_name" class="game-name">{{game}}</div>
+				<div id="lang_name" class="game-name">{{lang}}</div>
+				<div id="date" class="game-name">{{date}}</div>
+				<div id="time" class="game-name">{{hour}}</div>
+				<div id="players" class="game-name">{{players}} hrače(ů)</div>
+			</div>
+
+			<div id="total_cost" class="cost-in">Celková cena: <span id="cost_number">{{price}}</span> Kč</div>
+
+			<div class="voucher">
+				<!-- <div class="label-voucher">
+			        <input type="checkbox" id="voucher" name="feature"
+			               value="voucher"/>
+			        <label for="voucher">Ano, mám voucher</label>
+		        </div> -->
+		        <input id="voucherCode" type="text" maxlength="50" name="voucher" placeholder="Kód voucheru">
+		    </div>
+
+			<div class="title-in">Pro rezervaci potřebujeme</br> následující informace</div>
+			<div class="info-input-group">
+				<input id="first_name" type="text" maxlength="20" name="first_name" placeholder="Jméno">
+				<input id="last_name" type="text" maxlength="20" name="last_name" placeholder="Příjmení">
+				<input id="email" type="email" maxlength="50" name="email" placeholder="Email">
+				<input id="phone" type="text" maxlength="20" name="phone" placeholder="Telefonní číslo">
+			</div>
+			<button type="" class="primary medium reserve">Rezervovat</button>
+		</div>
+
+		<!-- alert warning peak-->
+		<div class="alert peak">
+			<span class="close">&times;</span> 
+  			<strong>Pardon, tento termin ještě není dostupný</strong>
+  			<strong>Výber jiný termin, prosím!</strong>
+		</div>
+		<!-- alert warning info-->
+		<div class="alert info">
+			<span class="close">&times;</span> 
+  			<strong>Děkujeme!</strong>
+		</div>
+	</script>
+
+</body>
+</html>
+
+

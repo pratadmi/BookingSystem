@@ -1,0 +1,699 @@
+/* Common styles */
+.load-box {
+  height: 320px; 
+}
+
+.load {
+  /*background-color: white; */
+  background-image: url('./../media/icons/load.gif');
+  height: 50px; 
+  width: 50px; 
+  margin-right: auto;
+  margin-left: auto;
+  
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+em {
+  font-weight: 700;
+  color: #9dd72a;
+  font-style: normal;
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.carousel-offset {
+  position: relative;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel-item {
+  padding: 40px 25px 16px 25px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0.5;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.carousel-item.selected {
+  padding: 10px;
+  opacity: 1;
+}
+
+/* Loading */
+#loading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* Scroll arrows */
+.game.scroll-arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: 40px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  visibility: hidden;
+}
+
+.game.scroll-arrow-left {
+  right: 96%;
+}
+
+.game.scroll-arrow-right {
+  left: 96%;
+}
+
+.day.scroll-arrow {
+  cursor: pointer;
+  /*position: -webkit-sticky;*/
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  visibility: hidden;
+}
+
+.day.scroll-arrow-left {
+  right: 96%;
+}
+
+.day.scroll-arrow-right {
+  left: 96%;
+}
+
+.scroll-arrow.active {
+  visibility: visible;
+}
+
+/* Mission picker */
+.mission-container {
+  width: 100%;
+  max-width: 400px;
+  /*height: 480px;*/
+}
+
+.mission-image-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 9px;
+}
+
+.mission-carousel .mission-image {
+  border: none;
+  width: 100%;
+  padding-bottom: 75%;
+  background-size: cover;
+  cursor: pointer; 
+}
+
+.mission-image-container img {
+  display: block;
+  position: absolute;
+  max-width: 80%;
+  max-height: 80%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.price {
+  font-size: 20px;
+  visibility: hidden;
+}
+
+.price.lower {
+  font-weight: bold;
+  color: #2d3915;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.price.higher {
+  /*background-color: #eebb2a;*/
+  background-color: #232323;
+  font-size: 23px;
+  padding: 8px 0;
+}
+
+/*   ///NEW     */
+
+.datepick {
+  margin: 5px 0px 0px 0px;
+  padding: 0px 0px 0px 10px;
+  height: 35px;
+  border: 2px solid white;
+  /*border-radius: 10px;*/
+  font-weight: bold;
+  color: #2d3915;
+  background-color: #9dd72a;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #8cce3b;
+    background: #f1fbe5 url(images/ui-bg_glass_55_f1fbe5_1x400.png) 50% 50% repeat-x;
+    /*color: #030303;*/
+}
+
+.players {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 10px;
+  height: 35px;
+  border: 2px solid white;
+  /*border-radius: 10px;*/
+}
+
+.langs {
+  margin: 5px 0px 0px 0px;
+  padding: 0px 0px 0px 10px;
+  height: 35px;
+  border: 2px solid white;
+  /*border-radius: 10px;*/
+}
+
+.hour.price.higher {
+  border-top: 1.5px solid #ffffff;
+}
+
+.title.price.lower {
+   background-color: #232323;
+   color: #ffffff;
+   /*margin: 2px 0px;*/
+   font-size: 30px;
+}
+
+/* Date-time picker */
+.handlebar {
+  margin: 0px 0px 30px 0px;
+}
+
+.day-carousel {
+  height: 350px;
+  max-height: 500px;
+}
+
+.day-container {
+  width: 60%;
+  max-width: 200px;
+}
+
+.day-title {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.time-slot {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #777777;
+  border-bottom: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.time-slot:last-child {
+  border-bottom: 1px solid #777777;
+}
+
+.time-slot.available {
+  background-color: white;
+  color: white;
+}
+
+.time-slot.available.peak {
+  background-color: #eebb2a;
+  color: #2d3915;
+}
+
+.day-container > .day-title, 
+.day-container > .time-slot {
+  font-size: 1rem; /*>> implements as a zoom in js*/ 
+}
+
+.day-container.selected .time-slot.available:hover,
+.day-container.selected .time-slot.selected {
+  /* here changed*/
+  transition-delay: 1s;
+  transition: transform 1s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #30bac8;
+  border-color: transparent;
+}
+
+.day-container.selected > .day-title, 
+.day-container.selected > .time-slot {
+  font-size: 1.3rem; /*>> implements as a zoom in js*/ 
+}
+
+/* Book button */
+#booking-container .book-button {
+  opacity: 0.5;
+  cursor: default;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+#booking-container .book-button.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#booking-container .reserve {
+  opacity: 0.5;
+  cursor: default;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+#booking-container .reserve.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.title-section {
+  margin: 10px 0px 10px 0px;
+}
+
+.title-page {
+  font-size: 35px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.delete-title-page {
+  font-size: 35px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.delete-button {
+  margin-top: 30px;
+}
+
+.to-torch {
+  margin-top: 30px;
+}
+
+.title-in {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0px 0px 15px 0px;
+}
+
+.cost-in {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0px 0px 15px 0px;
+}
+
+.cost-in span {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px 0px 15px 0px;
+}
+
+.waiting {
+  font-size: 1.6rem;
+  color: white;
+  position: absolute;
+  top:30%;
+  right: 32%;
+  /* needed styles for the overlay */
+  z-index: 10; /* keep on top of other elements on the page */
+  outline: 9999px solid rgba(0,0,0,0.6);
+  display: none;
+}
+
+.waiting.active {
+  display: block;
+}
+
+/*Back button*/
+#booking-container .back-button {
+  opacity: 0.5;
+  cursor: default;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 9px 5px 9px;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+#booking-container .back-button.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Second step */
+.alert {
+  font-size: 1.6rem;
+  color: white;
+  position: absolute;
+  top:30%;
+  right: 32%;
+  /* needed styles for the overlay */
+  z-index: 10; /* keep on top of other elements on the page */
+  outline: 9999px solid rgba(0,0,0,0.8);
+  display: none;
+}
+
+.alert.active {
+  display: block;
+}
+
+.alert.peak {
+  width: 600px;
+  padding: 18px;
+  background-color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+}
+
+.alert.info {
+  width: 600px;
+  height: 120px;
+  padding:35px;
+  background-color: #67AC5B;
+  border: 1px solid #67AC5B;
+  border-radius: 5px;
+}
+
+.close {
+  font-size: 35px;
+  margin: 2px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.alert > strong {
+  margin: 40px;
+}
+
+.error-messages {
+  background-color: #ce2710;
+  margin: 0 auto 18px;
+  padding: 18px;
+}
+
+.error-messages p {
+  margin: 0;
+}
+
+.game-description {
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+::placeholder {
+    color: white;
+    text-shadow: 
+    -0   -1px 2px #282828,
+     0   -1px 2px #282828,
+    -0    1px 2px #282828,
+     0    1px 2px #282828,
+    -1px -0   2px #282828,
+     1px -0   2px #282828,
+    -1px  0   2px #282828,
+     1px  0   2px #282828,
+    -1px -1px 2px #282828,
+     1px -1px 2px #282828,
+    -1px  1px 2px #282828,
+     1px  1px 2px #282828,
+    -1px -1px 2px #282828,
+     1px -1px 2px #282828,
+    -1px  1px 2px #282828,
+     1px  1px 2px #282828;
+    opacity: 1; /* Firefox */
+}
+
+.game-name {
+  line-height: 1.5;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: white;
+  margin: 5px;
+  border: 1px solid white;
+  /*border-radius: 10px;*/
+}
+
+.game-name:first-child { 
+  margin-top: 10px;
+}
+
+.game-name:last-child { 
+  margin-bottom: 30px;
+}
+
+.change-game {
+  margin-left: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.info-input-group {
+  /*margin-top: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;*/
+
+  margin: 18px 0 18px 0;
+  width: 300px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-input-group strong {
+  font-size: 24px;
+  display: block;
+  text-align: initial;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.info-input-group input,
+.info-input-group .input-group {
+  width: 100%;
+}
+
+.info-input-group .input-group input {
+  width: auto;
+}
+
+.voucher {
+  margin: 10px 0px 20px 0px;
+}
+
+.label-voucher {
+  font-size: 23px;
+}
+
+.input-help {
+  text-align: initial;
+  margin: 0;
+  font-size: 14px;
+  color: #a2a2a2;
+}
+
+.accept-disclosure {
+  margin-top: 18px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.inline-link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.inline-link:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .game.scroll-arrow-left {
+    right: 90%;
+  }
+
+  .game.scroll-arrow-right {
+    left: 90%;
+  }
+
+  .day.scroll-arrow-left {
+    right: 90%;
+  }
+
+  .day.scroll-arrow-right {
+    left: 90%;
+  }
+
+  .day-container > .day-title, 
+  .day-container > .time-slot {
+    font-size: 1.3rem; /*>> implements as a zoom in js*/ 
+  }
+
+  .day-container.selected > .day-title, 
+  .day-container.selected > .time-slot {
+    font-size: 1.3rem; /*>> implements as a zoom in js*/ 
+  }
+
+  .title-page {
+    font-size: 25px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .carousel-item {
+    padding: 5px;
+  }
+
+  .carousel-item.selected {
+    padding: 5px;
+  }
+
+  .mission-container {
+    max-width: 280px;
+  }
+
+  .day-container {
+      width: 100%;
+      max-width: 200px;
+  }
+
+  .alert {
+      font-size: 1.6rem;
+      color: white;
+      position: absolute;
+      top: 20%;
+      right: 13%;
+      z-index: 10;
+      outline: 9999px solid rgba(0,0,0,0.8);
+      display: none;
+  }
+
+  .alert.info {
+      width: 300px;
+      height: 120px;
+      padding: 10px;
+          padding-top: 10px;
+      background-color: #67AC5B;
+      border: 1px solid #67AC5B;
+      border-radius: 5px;
+      padding-top: 40px;
+  }
+
+  .alert.peak {
+      width: 300px;
+      height: 200px;
+      padding: 10px;
+          padding-top: 10px;
+      background-color: #f44336;
+      border: 1px solid #f44336;
+      border-radius: 5px;
+      padding-top: 40px;
+  }
+} 
+
+@media only screen and (max-width: 380px) {
+  .alert {
+      font-size: 1.6rem;
+      color: white;
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      z-index: 10;
+      outline: 9999px solid rgba(0,0,0,0.8);
+      display: none;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .game.scroll-arrow-left {
+    right: 88%;
+  }
+
+  .game.scroll-arrow-right {
+    left: 88%;
+  }
+
+  .day.scroll-arrow-left {
+    right: 88%;
+  }
+
+  .day.scroll-arrow-right {
+    left: 88%;
+  }
+
+  .title-page {
+    font-size: 25px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mission-container {
+    max-width: 240px; 
+  }
+
+  .info-input-group {
+    margin: 18px 0 18px 0;
+    width: 280px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .alert {
+      font-size: 1.6rem;
+      color: white;
+      position: absolute;
+      top: 20%;
+      right: 3%;
+      z-index: 10;
+      outline: 9999px solid rgba(0,0,0,0.8);
+      display: none;
+  }
+
+} 
